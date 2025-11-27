@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simple Portfolio</title>
+  <style>
+    :root{
+      --accent:#06b6d4;
+      --bg:#0f172a;
+      --card:#0b1220;
+      --muted:#94a3b8;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; background:linear-gradient(180deg,#071021 0%, #071827 100%); color:#e6eef6; line-height:1.5}
+    .container{max-width:960px; margin:0 auto; padding:28px}
+
+    header{display:flex; align-items:center; justify-content:space-between; gap:16px}
+    .logo{display:flex; align-items:center; gap:12px}
+    .logo .badge{width:44px; height:44px; border-radius:10px; background:var(--accent); display:grid; place-items:center; font-weight:700; color:#042023}
+    nav a{color:var(--muted); text-decoration:none; margin-left:14px}
+    nav a:hover{color:var(--accent)}
+
+    .hero{display:grid; grid-template-columns:1fr; gap:22px; align-items:center; margin:36px 0}
+    .hero-inner{background:rgba(255,255,255,0.02); padding:22px; border-radius:12px}
+    h1{margin:0 0 8px 0; font-size:28px}
+    p.lead{color:var(--muted); margin:0}
+
+    .grid{display:grid; grid-template-columns:repeat(2,1fr); gap:18px; margin-top:18px}
+    .card{background:rgba(255,255,255,0.02); padding:18px; border-radius:10px}
+    .skills{display:flex; gap:8px; flex-wrap:wrap}
+    .pill{background:rgba(255,255,255,0.03); padding:6px 10px; border-radius:999px; color:var(--muted); font-size:13px}
+
+    .projects{display:grid; gap:12px}
+    .project{display:flex; gap:12px; align-items:flex-start}
+    .project .thumb{width:96px; height:64px; border-radius:8px; background:linear-gradient(135deg,#083344,#0b3344); display:grid; place-items:center; color:#cfeff4}
+
+    footer{margin:36px 0 72px; text-align:center; color:var(--muted)}
+
+    .contact-form{display:grid; gap:12px}
+    .input, textarea{width:100%; padding:10px 12px; border-radius:8px; border:1px solid rgba(255,255,255,0.04); background:transparent; color:inherit}
+    button.primary{background:var(--accent); border:none; padding:10px 14px; border-radius:8px; color:#042023; font-weight:600; cursor:pointer}
+
+    /* Responsive */
+    @media (max-width:760px){
+      .grid{grid-template-columns:1fr}
+      .hero{grid-template-columns:1fr}
+      nav{display:none}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <div class="badge">SG</div>
+        <div>
+          <div style="font-weight:700">Sandhya Gaikwad</div>
+          <div style="font-size:13px; color:var(--muted)">Frontend Developer • Python enthusiast</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>Hi — I'm Sandhya. I build web apps & simple tools.</h1>
+        <p class="lead">I craft clean, accessible user interfaces and enjoy solving problems with JavaScript and Python. I love learning new tech and building things that help people.</p>
+        <div style="margin-top:12px">
+          <a href="#projects" class="pill" style="text-decoration:none">View Projects →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 style="margin-top:0">Quick info</h3>
+        <div class="skills" style="margin-top:8px">
+          <div class="pill">HTML</div>
+          <div class="pill">CSS</div>
+          <div class="pill">JavaScript</div>
+          <div class="pill">React</div>
+          <div class="pill">Python</div>
+        </div>
+
+        <div style="margin-top:12px; color:var(--muted); font-size:14px">Available for freelance • Open to remote roles</div>
+      </div>
+    </section>
+
+    <section id="about" class="grid">
+      <div class="card">
+        <h3>About me</h3>
+        <p style="color:var(--muted)">I'm a frontend-focused developer who enjoys turning designs into fast, accessible websites. I like working with modern JS frameworks and sometimes experiment with small ML projects in Python.</p>
+      </div>
+
+      <div class="card">
+        <h3>Experience</h3>
+        <ul style="color:var(--muted); padding-left:18px; margin:8px 0">
+          <li>Frontend Developer — Internship</li>
+          <li>Personal projects: portfolio, small utilities</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects" style="margin-top:20px">
+      <h3>Projects</h3>
+      <div class="projects">
+        <div class="project card">
+          <div class="thumb">P1</div>
+          <div>
+            <strong>Portfolio Website</strong>
+            <div style="color:var(--muted); font-size:14px">A responsive single-page portfolio built with HTML/CSS and a little JS.</div>
+          </div>
+        </div>
+
+        <div class="project card">
+          <div class="thumb">P2</div>
+          <div>
+            <strong>Task Manager</strong>
+            <div style="color:var(--muted); font-size:14px">A small JS app to manage to-dos with localStorage.</div>
+          </div>
+        </div>
+
+        <div class="project card">
+          <div class="thumb">P3</div>
+          <div>
+            <strong>Mini-ML Demo</strong>
+            <div style="color:var(--muted); font-size:14px">Simple Python script demonstrating data processing and plotting.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" style="margin-top:20px">
+      <h3>Contact</h3>
+      <div class="card">
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('Thanks — message simulated!');">
+          <input class="input" placeholder="Your name" required />
+          <input class="input" type="email" placeholder="Your email" required />
+          <textarea rows="4" class="input" placeholder="Message"></textarea>
+          <div style="display:flex; gap:8px;">
+            <button class="primary">Send message</button>
+            <a href="#" style="align-self:center; color:var(--muted); text-decoration:none">Download CV</a>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      © 2025 Sandhya • Built with HTML & CSS
+    </footer>
+  </div>
+</body>
+</html>
